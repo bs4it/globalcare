@@ -52,10 +52,10 @@ $Senderarg7 = '0'
 $Senderarg8 = '1'
 
 
-If(!(test-path $reportpath))
-{
-      New-Item -ItemType Directory -Force -Path $reportpath
-}
+#If(!(test-path $reportpath))
+#{
+      #New-Item -ItemType Directory -Force -Path $reportpath
+#}
 
 # ------------------------------------------------------------------------- #
 # This part gets the date Windows Updates were last applied and writes it to temp file
