@@ -1,4 +1,4 @@
-# Powershell script for Zabbix agents.
+﻿# Powershell script for Zabbix agents.
 
 # Version 2.1 - for Zabbix agent 5x
 
