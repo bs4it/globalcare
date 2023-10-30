@@ -1,0 +1,53 @@
+version: "4.0"
+services:
+    zabbix-proxy-v4:
+        image: dockerglobalcare/globalcare:5.3
+        container_name: proxy
+        hostname: proxy
+        ports:
+            - $IP:10051:10051
+        cap_add: ['NET_ADMIN']
+        devices:
+            - /dev/net/tun
+        environment:
+            - ZBX_HOSTNAME=$ZBX_HOSTNAME
+            - ZBX_SERVER_HOST=m.bs4it.com.br
+            - ZBX_DEBUGLEVEL=3
+            - ZBX_TIMEOUT=30
+            - ZBX_PROXYLOCALBUFFER=1
+            - ZBX_PROXYOFFLINEBUFFER=2
+            - ZBX_CONFIGFREQUENCY=600
+            - ZBX_STARTPOLLERS=$ZBX_STARTPOLLERS
+            - ZBX_STARTPOLLERSUNREACHABLE=$ZBX_STARTPOLLERSUNREACHABLE
+            - ZBX_STARTTRAPPERS=$ZBX_STARTTRAPPERS
+            - ZBX_STARTPINGERS=$ZBX_STARTPINGERS
+            - ZBX_CACHESIZE=$ZBX_CACHESIZE
+            - ZBX_HISTORYCACHESIZE=$ZBX_HISTORYCACHESIZE
+            - ZBX_HISTORYINDEXCACHESIZE=$ZBX_HISTORYINDEXCACHESIZE
+            - ZBX_STARTVMWARECOLLECTORS=$ZBX_STARTVMWARECOLLECTORS
+            - ZBX_VMWAREFREQUENCY=$ZBX_VMWAREFREQUENCY
+            - ZBX_VMWAREPERFFREQUENCY=$ZBX_VMWAREPERFFREQUENCY
+            - ZBX_VMWARECACHESIZE=$ZBX_VMWARECACHESIZE
+            - ZBX_VMWARETIMEOUT=$ZBX_VMWARETIMEOUT
+            - TNS_ADMIN=/usr/lib/oracle/12.1/client64/network/admin
+            - ZBX_TLSCONNECT=psk
+            - ZBX_TLSPSKIDENTITY=$ZBX_HOSTNAME
+            - ZBX_TLSPSKFILE=tls.psk
+        volumes:
+            - /opt/globalcare/scripts/externalscripts:/usr/lib/zabbix/externalscripts
+###         - /opt/globalcare/tnsnames.ora:/usr/lib/oracle/12.1/client64/network/admin/tnsnames.ora
+            - /opt/globalcare/tls.psk:/var/lib/zabbix/enc/tls.psk
+            - /etc/odbc.ini:/etc/odbc.ini
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+            - /etc/hosts:/etc/hosts
+        restart: always
+        networks:
+           zbx-network:
+              ipv4_address: 172.25.0.100
+networks:
+  zbx-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.25.0.0/24
