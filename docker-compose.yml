@@ -36,7 +36,7 @@ services:
         volumes:
             - /opt/globalcare/scripts/externalscripts:/usr/lib/zabbix/externalscripts
 ###         - /opt/globalcare/tnsnames.ora:/usr/lib/oracle/12.1/client64/network/admin/tnsnames.ora
-            - /opt/globalcare/tls.psk:/var/lib/zabbix/enc/tls.psk
+            - /opt/globalcare/tls.psk/:/var/lib/zabbix/enc/tls.psk
             #- /etc/odbc.ini:/etc/odbc.ini
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
