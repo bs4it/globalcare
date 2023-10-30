@@ -37,17 +37,17 @@ services:
             - /opt/globalcare/scripts/externalscripts:/usr/lib/zabbix/externalscripts
 ###         - /opt/globalcare/tnsnames.ora:/usr/lib/oracle/12.1/client64/network/admin/tnsnames.ora
             - /opt/globalcare/tls.psk:/var/lib/zabbix/enc/tls.psk
-            - /etc/odbc.ini:/etc/odbc.ini
+            #- /etc/odbc.ini:/etc/odbc.ini
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
             - /etc/hosts:/etc/hosts
         restart: always
         networks:
            zbx-network:
-              ipv4_address: 172.25.0.100
+              ipv4_address: $IP_CONTAINER
 networks:
   zbx-network:
     ipam:
       driver: default
       config:
-        - subnet: 172.25.0.0/24
+        - subnet: $IP_SUBNET
