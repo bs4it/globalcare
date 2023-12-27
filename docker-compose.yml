@@ -12,11 +12,11 @@ services:
         environment:
             - ZBX_HOSTNAME=$ZBX_HOSTNAME
             - ZBX_SERVER_HOST=m.bs4it.com.br
-            - ZBX_DEBUGLEVEL=3
-            - ZBX_TIMEOUT=30
-            - ZBX_PROXYLOCALBUFFER=1
-            - ZBX_PROXYOFFLINEBUFFER=2
-            - ZBX_CONFIGFREQUENCY=600
+            - ZBX_DEBUGLEVEL=$ZBX_DEBUGLEVEL
+            - ZBX_TIMEOUT=$ZBX_TIMEOUT
+            - ZBX_PROXYLOCALBUFFER=$ZBX_PROXYLOCALBUFFER
+            - ZBX_PROXYOFFLINEBUFFER=$ZBX_PROXYOFFLINEBUFFER
+            - ZBX_CONFIGFREQUENCY=$ZBX_CONFIGFREQUENCY
             - ZBX_STARTPOLLERS=$ZBX_STARTPOLLERS
             - ZBX_STARTPOLLERSUNREACHABLE=$ZBX_STARTPOLLERSUNREACHABLE
             - ZBX_STARTTRAPPERS=$ZBX_STARTTRAPPERS
@@ -35,6 +35,7 @@ services:
             - ZBX_TLSPSKFILE=tls.psk
         volumes:
             - /opt/bs4it/zabbix-proxy/scripts/externalscripts:/usr/lib/zabbix/externalscripts
+            - /opt/bs4it/zabbix-proxy/scripts/alertscripts:/usr/lib/zabbix/alertscripts
 ###         - /opt/bs4it/zabbix-proxy/tnsnames.ora:/usr/lib/oracle/12.1/client64/network/admin/tnsnames.ora
             - /opt/bs4it/zabbix-proxy/tls.psk/:/var/lib/zabbix/enc/tls.psk
             #- /etc/odbc.ini:/etc/odbc.ini
