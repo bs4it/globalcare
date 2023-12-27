@@ -5,7 +5,7 @@ services:
         container_name: proxyzbx5
         hostname: proxyzbx5
         ports:
-            - $IP:ZBX_SERVER_PORT:ZBX_SERVER_PORT
+            - $IP:$ZBX_SERVER_PORT:$ZBX_SERVER_PORT
         cap_add: ['NET_ADMIN']
         devices:
             - /dev/net/tun
