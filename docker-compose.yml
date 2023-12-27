@@ -2,8 +2,8 @@ version: "4.0"
 services:
     zabbix-proxy-v4:
         image: dockerglobalcare/globalcare:5.4
-        container_name: proxyzbx5
-        hostname: proxyzbx5
+        container_name: proxyzbx6
+        hostname: proxyzbx6
         ports:
             - $IP:$ZBX_SERVER_PORT:$ZBX_SERVER_PORT
         cap_add: ['NET_ADMIN']
