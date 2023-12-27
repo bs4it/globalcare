@@ -33,6 +33,7 @@ services:
             - ZBX_TLSCONNECT=psk
             - ZBX_TLSPSKIDENTITY=$ZBX_HOSTNAME
             - ZBX_TLSPSKFILE=tls.psk
+            - ZBX_SERVER_PORT=$ZBX_SERVER_PORT
         volumes:
             - /opt/bs4it/zabbix-proxy/scripts/externalscripts:/usr/lib/zabbix/externalscripts
             - /opt/bs4it/zabbix-proxy/scripts/alertscripts:/usr/lib/zabbix/alertscripts
