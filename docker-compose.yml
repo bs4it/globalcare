@@ -11,7 +11,7 @@ services:
             - /dev/net/tun
         environment:
             - ZBX_HOSTNAME=$ZBX_HOSTNAME
-            - ZBX_SERVER_HOST=m.bs4it.com.br
+            - ZBX_SERVER_HOST=$ZBX_SERVER_HOST
             - ZBX_DEBUGLEVEL=$ZBX_DEBUGLEVEL
             - ZBX_TIMEOUT=$ZBX_TIMEOUT
             - ZBX_PROXYLOCALBUFFER=$ZBX_PROXYLOCALBUFFER
