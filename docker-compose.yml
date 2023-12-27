@@ -38,7 +38,7 @@ services:
             - /opt/bs4it/zabbix-proxy/scripts/externalscripts:/usr/lib/zabbix/externalscripts
             - /opt/bs4it/zabbix-proxy/scripts/alertscripts:/usr/lib/zabbix/alertscripts
 ###         - /opt/bs4it/zabbix-proxy/tnsnames.ora:/usr/lib/oracle/12.1/client64/network/admin/tnsnames.ora
-            - /opt/bs4it/zabbix-proxy/tls.psk/:/var/lib/zabbix/enc/tls.psk
+            - /opt/bs4it/zabbix-proxy/tls.psk/:/var/lib/zabbix/enc/tls.psk:ro
             #- /etc/odbc.ini:/etc/odbc.ini
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
