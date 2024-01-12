@@ -1,7 +1,7 @@
 version: "6.0"
 services:
     zabbix-proxy-v6:
-        image: dockerglobalcare/zbx-prx-6.0.25:1.0
+        image: dockerglobalcare/globalcare:5.3
         container_name: zbx-proxy
         hostname: zbx-proxy
         ports:
