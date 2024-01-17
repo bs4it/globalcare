@@ -43,7 +43,7 @@ services:
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
             - /etc/hosts:/etc/hosts
-            - /etc/resolv.conf:/etc/resolv.conf
+#            - /etc/resolv.conf:/etc/resolv.conf
         restart: always
         networks:
            zbx-network:
