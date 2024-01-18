@@ -1,6 +1,6 @@
 version: "4.0"
 services:
-    zabbix-proxy-v4:
+    zabbix-proxy-v5:
         image: dockerglobalcare/globalcare:5.4
         container_name: proxyzbx5.4
         hostname: proxyzbx5
@@ -47,7 +47,6 @@ services:
             - /usr/lib64/psqlodbcw.so:/usr/lib64/psqlodbcw.so
             - /usr/lib64/psqlodbca.so:/usr/lib64/psqlodbca.so
             - /opt/bs4it/zabbix-proxy/odbcinst.ini:/etc/odbcinst.ini
-
 #            - /etc/resolv.conf:/etc/resolv.conf
              
         restart: always
