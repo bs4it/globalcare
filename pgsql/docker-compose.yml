@@ -43,7 +43,6 @@ services:
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
             - /etc/hosts:/etc/hosts
-            - /opt/bs4it/zabbix-proxy/tnsnames.ora:/usr/lib/oracle/12.1/client64/network/admin/tnsnames.ora
             - /usr/lib64/psqlodbcw.so:/usr/lib64/psqlodbcw.so
             - /usr/lib64/psqlodbca.so:/usr/lib64/psqlodbca.so
             - /opt/bs4it/zabbix-proxy/odbcinst.ini:/etc/odbcinst.ini
